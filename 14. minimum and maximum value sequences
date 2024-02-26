@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void minMaxSequence(int arr[], int size) {
+    int minSeq = arr[0], maxSeq = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < minSeq) {
+            minSeq = arr[i];
+            printf("Minimum value sequence updated: %d\n", minSeq);
+        }
+        if (arr[i] > maxSeq) {
+            maxSeq = arr[i];
+            printf("Maximum value sequence updated: %d\n", maxSeq);
+        }
+    }
+}
+
+int main() {
+    int arr[] = {5, 10, 3, 7, 15, 8, 2};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original list of numbers: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    minMaxSequence(arr, size);
+
+    return 0;
+}
